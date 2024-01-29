@@ -1,16 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import AddTaskModal from "./AddTaskModal";
+import { TasksContext } from "./TaskBord";
 
 const AddTask = () => {
-  const [showTakModal, setShowTaskModal] = useState(false);
-
-  const handleTaskModalShow = () => {
-    setShowTaskModal(true);
-  };
-
-  const handleCloseTaslModal = () => {
-    setShowTaskModal(false);
-  };
+  const { showTakModal, handleTaskModalShow, handleCloseTaslModal } =
+    useContext(TasksContext);
 
   return (
     <div class="mb-14 items-center justify-between sm:flex">
